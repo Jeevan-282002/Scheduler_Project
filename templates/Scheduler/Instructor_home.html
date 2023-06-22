@@ -1,0 +1,67 @@
+{% extends "Scheduler/Base.html" %}
+
+<!-- css block  -->
+{% block css %}
+<style>
+    .title {
+        background-color: rgb(201, 255, 237);
+    }
+</style>
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+
+<!-- title block  -->
+
+{% block title %}
+<title>Instructors home</title>
+{% endblock title %}
+
+<!-- body block  -->
+
+{% block body %}
+<div class="container mt-5">
+    <div class="title rounded shadow text-center" style="display: inline-block; width: 850px;">
+        
+        <h1>Instructor Panel</h1>
+    </div>
+    <a href="{% url 'signout' %}" class="btn btn-danger">signout</a>
+
+
+    <div class="container w-75 border shadow mt-3" style="background-color: rgb(201, 255, 237);">
+        {% for d in data %}
+
+        <table class="table">
+            <thead>
+                <th>Date</th>
+                <th>Course</th>
+                <th>Instructor</th>
+            </thead>
+            <tbody>
+                
+
+                <td>{{d.date}}</td>
+                <td>{{d.course}}</td>
+                <td>{{d.instructor}}</td>
+                
+
+            </tbody>
+        </table>
+        {% endfor %}
+
+        
+        
+        
+
+    </div>
+
+
+</div>
+
+
+{% endblock body %}

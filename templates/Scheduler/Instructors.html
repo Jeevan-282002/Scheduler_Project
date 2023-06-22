@@ -1,0 +1,50 @@
+{% extends "Scheduler/Base.html" %}
+
+<!-- css block  -->
+{% block css %}
+<style>
+    .title {
+        background-color: rgb(201, 255, 237);
+    }
+</style>
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+
+<!-- title block  -->
+
+{% block title %}
+<title>All Instructors</title>
+{% endblock title %}
+
+<!-- body block  -->
+
+{% block body %}
+<div class="container mt-5">
+    <div class="title rounded shadow text-center">
+        <h1 style="display: inline-flexbox;">All Instructors</h1>
+        
+        
+    </div>
+    <div class="container text-center mt-4">
+        <a href="{% url 'Add_Instructor' %}" class="btn btn-primary">Add Instructor</a>
+    </div>
+    <div class="container w-50 border shadow mt-3"  style="background-color: rgb(201, 255, 237);">
+        
+        {% for d in data %}
+        
+            <div class="mb-3">
+                
+                    {{d.id}}.
+                {{d.name}}
+                
+            </div>
+        
+        {% endfor %}
+    </div>
+{% endblock body %}

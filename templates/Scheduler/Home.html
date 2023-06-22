@@ -1,0 +1,48 @@
+{% extends "Scheduler/Base.html" %}
+
+<!-- css block  -->
+{% block css %}
+<style>
+  
+    .title{
+        background-color: rgb(201, 255, 237);
+    }
+</style>
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+
+<!-- title block  -->
+
+{% block title %}
+<title>Home Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+
+{% block body %}
+<div class="container">
+    <div class="title mt-5 rounded text-center shadow">
+        <h1>Online Lecture Scheduling Module</h1>
+    </div>
+    <div class="container">
+        <div class="row mt-5 text-center">
+            <div class="col-6 ">
+                <div class="box">
+                    <a href="{% url 'Admin_Login' %}"><img src="https://th.bing.com/th/id/R.be2b873f9f72f2b9f27ec0337c2c749a?rik=jqjn8sKQkYn18A&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2f7%2fn%2fv%2fK%2fA%2fb%2fred-rectangle-admin-login-button-hi.png&ehk=0roN8nAkxnpGrVzbdsmyMyzBbtIaeX6gHrtpIBFO8nc%3d&risl=&pid=ImgRaw&r=0" alt="" width=" 400px" ></a>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="box">
+                    <a href="{% url 'Instructor_Login' %}"><img class="rounded shadow mt-2" style="height: 240px;" src="https://th.bing.com/th/id/OIP.Xdaj8AcC5Cl8KflZvqSrmwHaFN?w=259&h=180&c=7&r=0&o=5&dpr=1.2&pid=1.7" alt="" ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

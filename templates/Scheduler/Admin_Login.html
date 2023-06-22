@@ -1,0 +1,43 @@
+{% extends "Scheduler/Base.html" %}
+
+{% load static %}
+
+<!-- custome title -->
+{% block title %}
+<title>Admin login Page</title>
+{% endblock title %}
+
+<!-- custom css -->
+{% block css %}
+
+{% endblock css %}
+
+<!-- custom js -->
+{% block js %}
+{% endblock js %}
+
+
+{% block body %}
+<div class="container text-center">
+    
+    
+    <div style="margin-top: 130px;" class="container shadow w-50 shadow p-3 rounded">
+        <div class="container bg-primary" style="height: 30px;"></div>
+        <div class="container">
+            <img src="https://onefile.co.uk/wp-content/uploads/2020/10/Meetyourgoals-05-744x762.png" height="100px" alt="">
+        </div>
+        <form action="{% url 'Admin_Login' %}" method="post">
+            {% csrf_token %}
+            {% for fm in form %}
+            {{fm.label_tag}}
+            {{fm}}
+            {% endfor %}
+
+            <div class="container mt-3">
+                <input type="submit" class="btn btn-outline-primary btn-lg" value="Login">
+            </div>
+            
+        </form>
+    </div>
+</div>
+{% endblock body %}

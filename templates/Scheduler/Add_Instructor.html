@@ -1,0 +1,54 @@
+{% extends "Scheduler/Base.html" %}
+
+<!-- css block  -->
+{% block css %}
+<style>
+    .title {
+        background-color: rgb(201, 255, 237);
+    }
+</style>
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+
+<!-- title block  -->
+
+{% block title %}
+<title>Add Instructor</title>
+{% endblock title %}
+
+<!-- body block  -->
+
+{% block body %}
+<div class="container mt-5">
+    <div class="title rounded shadow text-center">
+        <h1>Add Instructor</h1>
+
+    </div>
+    <div class="container text-center border shadow w-75 mt-4" style="background-color: rgb(205, 255, 238);">
+        <form action="{% url 'Add_Instructor' %}" method="post">
+            {% for fm in form %}
+            {% csrf_token %}
+            <div class="mt-2 mb-2">
+                <p style=" font-size: medium;">{{fm.label_tag}}</p>
+                {{fm}}
+            </div>
+            {% endfor %}
+            
+
+            
+     
+
+            <div class="container">
+                <input type="submit" value="submit" class="btn btn-info">
+            </div>
+
+        </form>
+    </div>
+
+    {% endblock body %}
