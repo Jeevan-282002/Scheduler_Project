@@ -7,7 +7,7 @@ from django.contrib import messages
 # Create your views here.
 
 def Home_View(request):
-    return render(request,"Scheduler/home.html")
+    return render(request,"Scheduler/Home.html")
 
 def Admin_Home_View(request):
     return render(request, "Scheduler/Admin_Home.html")
@@ -96,7 +96,7 @@ def Instructor_Login_View(request):
             messages.info(request , 'Instructor Logged in Succesfully!!')
             return redirect('Instructor_Home')
         else:
-            messages.warning(request , 'Something went wrong!!')
+            
             return redirect("Instructor_Home")
     
     context = {"form":form}
@@ -126,7 +126,7 @@ def Add_Instructor_View(request):
 def Instructor_Home_View(request):
     data = Lectures.objects.all()
     context = {"data":data}
-    return render(request,"Scheduler/Instructor_Home.html",context)
+    return render(request,"Scheduler/Instructor_home.html",context)
 
 
 def signout_view(request):
